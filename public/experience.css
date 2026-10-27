@@ -69,3 +69,35 @@ app-gallery,app-dress-code,app-gifts,app-rsvp {display:none!important}
 .ad-editorial .blessing-photo-card{display:none}
 .ad-editorial .rings-card{max-width:940px}
 .ad-editorial .canvas-wrapper{background:radial-gradient(ellipse at center,#f9faf5 10%,#e4e8df 75%);border:1px solid #cbd2c3;border-radius:24px}
+
+/* Refined navigation, hierarchy and unified event cards. */
+.ad-editorial .section-title,
+.ad-editorial .rings-title{font-size:clamp(40px,5vw,58px);line-height:1.05;letter-spacing:-.035em;font-weight:400}
+.ad-editorial .rings-desc{font:italic 18px/1.55 var(--font-serif);margin-bottom:28px}
+.ad-calendar{display:inline-flex;align-items:center;margin-top:16px;background:#f9f8f2;border:1px solid #c9cfbd;border-radius:999px;padding:11px 18px;font:600 10px var(--font-sans);letter-spacing:.05em;color:#56634b;cursor:pointer;box-shadow:0 8px 18px #47523e16;transition:transform .25s,box-shadow .25s,background .25s}
+.ad-calendar:hover{transform:translateY(-2px);background:#fff;box-shadow:0 13px 24px #47523e22}
+.ad-calendar span{margin-left:16px}
+.ad-editorial .btn-primary,
+.ad-editorial .btn-secondary{border-radius:999px;box-shadow:0 10px 24px #414b3918;font-size:10px;letter-spacing:.1em;min-height:48px;transition:transform .25s,box-shadow .25s,background .25s}
+.ad-editorial .btn-primary:hover,
+.ad-editorial .btn-secondary:hover{transform:translateY(-3px);box-shadow:0 15px 30px #414b3926}
+.ad-editorial .btn-secondary{background:#f9f8f2;border-color:#c3c8b7}
+.ad-editorial .location-card{border:1px solid #d6dacd;border-radius:28px;background:#faf9f4;box-shadow:0 18px 45px #39443112}
+.ad-editorial .location-card:hover{transform:translateY(-5px);box-shadow:0 24px 54px #3944311f}
+.ad-editorial .btn-location{border-radius:999px;box-shadow:0 12px 26px #43513838;font-size:11px}
+.ad-editorial .btn-tool{border-radius:999px;padding:9px 15px;box-shadow:0 7px 16px #39443118}
+.ad-editorial .btn-tool:hover{transform:translateY(-2px)}
+.ad-controls{position:fixed;bottom:20px;left:22px;display:flex;gap:7px;z-index:1003;padding:6px;background:#f4f0e7e8;border:1px solid #d2d6c8;border-radius:999px;box-shadow:0 14px 36px #313a2a24;backdrop-filter:blur(14px)}
+.ad-controls button{display:inline-flex;align-items:center;gap:7px;font:600 9px var(--font-sans);letter-spacing:.04em;color:#55604b;background:#fbfaf5;border:1px solid #d8dccf;border-radius:999px;padding:9px 13px;cursor:pointer;min-height:38px;box-shadow:0 5px 12px #39443112;transition:transform .22s,box-shadow .22s,background .22s}
+.ad-controls button+button{border-left:1px solid #d8dccf}
+.ad-controls button:hover,
+.ad-controls button:focus-visible{transform:translateY(-2px);background:#fff;box-shadow:0 9px 18px #39443120}
+.ad-controls .ad-control-icon{display:grid;place-items:center;width:20px;height:20px;border-radius:50%;background:#e6eadf;color:#4f5d45;font:700 12px/1 var(--font-sans)}
+
+@media(max-width:640px){
+  .ad-editorial .section-title,.ad-editorial .rings-title{font-size:40px}
+  .ad-controls{left:10px;right:10px;bottom:10px;justify-content:center;gap:4px;border-radius:22px}
+  .ad-controls button{font-size:7px;padding:7px 8px;min-width:0}
+  .ad-controls .ad-reopen{display:inline-flex}
+  .ad-controls .ad-control-icon{width:18px;height:18px;font-size:10px}
+}

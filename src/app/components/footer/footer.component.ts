@@ -9,10 +9,6 @@ import { CommonModule } from '@angular/common';
     <footer class="wedding-footer">
       <div class="footer-container">
         
-        <div class="footer-monogram animate-float">
-          <span>A & D</span>
-        </div>
-
         <h3 class="footer-title">Alan & Dany</h3>
         <p class="footer-message">
           "El amor no se acaba jamás. Gracias de todo corazón por acompañarnos en este comienzo de una eternidad juntos."
@@ -53,23 +49,6 @@ import { CommonModule } from '@angular/common';
       display: flex;
       flex-direction: column;
       align-items: center;
-    }
-
-    .footer-monogram {
-      width: 58px;
-      height: 58px;
-      border-radius: 50%;
-      border: 1.5px solid var(--c-cafe);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: var(--font-serif);
-      font-size: 1.15rem;
-      font-weight: 700;
-      color: var(--c-cafe-dark);
-      background: var(--c-cream);
-      box-shadow: var(--shadow-sm);
-      margin-bottom: 20px;
     }
 
     .footer-title {

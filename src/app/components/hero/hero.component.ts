@@ -6,7 +6,7 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   template: `
-    <header class="hero-section">
+    <header id="inicio" class="hero-section">
       <!-- Ambient Glow Ornaments -->
       <div class="ambient-glow glow-1"></div>
       <div class="ambient-glow glow-2"></div>

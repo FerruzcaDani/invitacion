@@ -4,7 +4,7 @@
   if (window.__adExperience) return;
   window.__adExperience = true;
   const link = document.createElement('link');
-  link.rel = 'stylesheet'; link.href = 'experience.css?v=silver1'; document.head.append(link);
+  link.rel = 'stylesheet'; link.href = 'experience.css?v=refined2'; document.head.append(link);
   const ready = () => {
     const hero = document.querySelector('.hero-section');
     if (!hero || !document.querySelector('.wedding-footer')) return false;
@@ -61,14 +61,16 @@
     function announce(text) {status.textContent=text;status.classList.add('show');clearTimeout(statusTimer);statusTimer=setTimeout(()=>status.classList.remove('show'),4500);}
     function download(content,name,type) {const url=URL.createObjectURL(new Blob([content],{type}));const a=document.createElement('a');a.href=url;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(url),5000);}
     const progress=create('div','ad-progress');progress.setAttribute('aria-hidden','true');document.body.append(progress);
-    const controls=create('div','ad-controls','<button type="button" class="ad-motion" aria-pressed="false">Pausar movimiento</button><button type="button" class="ad-reopen" aria-label="Volver a abrir el sobre">El sobre ↗</button>');document.body.append(controls);
+    const controls=create('div','ad-controls','<button type="button" class="ad-motion" aria-pressed="false"><span class="ad-control-icon ad-motion-icon" aria-hidden="true">Ⅱ</span><span class="ad-motion-label">Pausar movimiento</span></button><button type="button" class="ad-reopen" aria-label="Volver a la portada de la invitación"><span class="ad-control-icon" aria-hidden="true">⌂</span><span>Inicio</span></button><button type="button" class="ad-top" aria-label="Regresar hasta arriba"><span class="ad-control-icon" aria-hidden="true">↑</span><span>Arriba</span></button>');document.body.append(controls);
     const motion=$('.ad-motion');
+    const motionLabel=$('.ad-motion-label',motion);
+    const motionIcon=$('.ad-motion-icon',motion);
     function updateMotion() {
       const ringPause = document.querySelector('button[title="Pausar giro"]');
       const ringPlay = document.querySelector('button[title="Girar automático"]');
       if (paused && ringPause) { resumeRings = true; ringPause.click(); }
       else if (!paused && resumeRings && ringPlay) { ringPlay.click(); resumeRings = false; }
-      document.body.classList.toggle('ad-still',paused);motion.textContent=paused?'Activar movimiento':'Pausar movimiento';motion.setAttribute('aria-pressed',String(paused));}
+      document.body.classList.toggle('ad-still',paused);motionLabel.textContent=paused?'Activar movimiento':'Pausar movimiento';motionIcon.textContent=paused?'▶':'Ⅱ';motion.setAttribute('aria-pressed',String(paused));}
     motion.onclick=()=>{paused=!paused;updateMotion();};reduced.addEventListener('change',e=>{paused=e.matches;updateMotion();});updateMotion();
 
     // A real dialog provides focus containment, Escape and keyboard access.
@@ -79,7 +81,14 @@
     function closeEnvelope(){document.body.classList.remove('ad-locked');envelope.close();if(envelopeReturn instanceof HTMLElement)envelopeReturn.focus();}
     $('.ad-seal',envelope).onclick=()=>{envelope.classList.add('is-opening');burst(innerWidth/2,innerHeight*.58,45);setTimeout(closeEnvelope,paused?0:850);};
     envelope.addEventListener('cancel',()=>{document.body.classList.remove('ad-locked');});
-    $('.ad-reopen').onclick=showEnvelope;
+    function goTop(smooth=true){
+      history.replaceState(null,'',location.pathname+location.search);
+      const behavior=smooth&&!paused?'smooth':'auto';
+      window.scrollTo({top:0,left:0,behavior});
+      if(behavior==='auto')requestAnimationFrame(()=>window.scrollTo(0,0));
+    }
+    $('.ad-reopen').onclick=()=>{goTop(false);showEnvelope();};
+    $('.ad-top').onclick=()=>goTop(true);
 
     // Ambient petals remain throughout the invitation.
     const ambient=create('canvas','ad-particles');ambient.setAttribute('aria-hidden','true');document.body.append(ambient);
@@ -101,7 +110,7 @@
     // Reveal once; never hide information again after the guest has reached it.
     const reveal=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('ad-visible');reveal.unobserve(e.target);}}),{threshold:.08});
     $$('.section-header,.blessing-grid,.timeline-item,.location-card,.gallery-card,.rsvp-card,.ad-union-copy').forEach((e,i)=>{e.classList.add('ad-reveal');e.style.setProperty('--ad-delay',`${i%3*75}ms`);reveal.observe(e);});
-    const textUpdates=[['#galeria .section-subtitle','Lo que somos'],['#galeria .section-title','Nuestro pequeño álbum'],['#galeria .section-desc','Tres imágenes. Muchas razones para seguir eligiéndonos. Toca una foto para verla de cerca.'],['#itinerario .section-subtitle','El día, paso a paso'],['#itinerario .section-title','Nos vemos aquí'],['#itinerario .section-desc','Abre cada momento para descubrir los detalles.'],['#ubicaciones .section-subtitle','El lugar del encuentro'],['#ubicaciones .section-title','Cómo llegar'],['#rsvp .section-subtitle','Nos falta lo más importante: tú']];
+    const textUpdates=[['#itinerario .section-subtitle','El día, paso a paso'],['#itinerario .section-title','Cómo llegar'],['#itinerario .section-desc','Horarios, lugares y rutas para acompañarnos en cada momento.']];
     textUpdates.forEach(([s,t])=>{if($(s))$(s).textContent=t;});
     $$('.nav-link,.mobile-link').forEach(e=>{if(e.textContent.trim()==='Alianzas 3D')e.textContent='Las alianzas';});
     $$('.timeline-card').forEach((card,i)=>{

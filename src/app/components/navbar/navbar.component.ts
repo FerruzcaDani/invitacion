@@ -9,18 +9,17 @@ import { CommonModule } from '@angular/common';
     <nav class="wedding-nav" [class.scrolled]="isScrolled()">
       <div class="nav-content">
         <!-- Logo / Monogram -->
-        <a href="#" class="nav-brand">
+        <a href="#inicio" class="nav-brand" aria-label="Ir al inicio">
           <span class="brand-monogram">A & D</span>
           <span class="brand-names">Alan & Dany</span>
         </a>
 
         <!-- Desktop Menu Links -->
         <div class="nav-links desktop-only">
-          <a href="#" class="nav-link">Inicio</a>
+          <a href="#inicio" class="nav-link">Inicio</a>
           <a href="#bendicion" class="nav-link">Bendición</a>
           <a href="#alianzas" class="nav-link">Alianzas 3D</a>
-          <a href="#itinerario" class="nav-link">Itinerario</a>
-          <a href="#ubicaciones" class="nav-link">Ubicación</a>
+          <a href="#itinerario" class="nav-link">Cómo llegar</a>
         </div>
 
         <!-- Mobile Hamburger Toggle -->
@@ -39,11 +38,10 @@ import { CommonModule } from '@angular/common';
 
       <!-- Mobile Dropdown -->
       <div class="mobile-menu" *ngIf="menuOpen()">
-        <a href="#" (click)="closeMobileMenu()" class="mobile-link">Inicio</a>
+        <a href="#inicio" (click)="closeMobileMenu()" class="mobile-link">Inicio</a>
         <a href="#bendicion" (click)="closeMobileMenu()" class="mobile-link">Bendición</a>
         <a href="#alianzas" (click)="closeMobileMenu()" class="mobile-link">Alianzas 3D</a>
-        <a href="#itinerario" (click)="closeMobileMenu()" class="mobile-link">Itinerario</a>
-        <a href="#ubicaciones" (click)="closeMobileMenu()" class="mobile-link">Ubicaciones</a>
+        <a href="#itinerario" (click)="closeMobileMenu()" class="mobile-link">Cómo llegar</a>
       </div>
     </nav>
   `,

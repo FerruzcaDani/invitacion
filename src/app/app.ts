@@ -4,9 +4,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { HeroComponent } from './components/hero/hero.component';
 import { BlessingComponent } from './components/blessing/blessing.component';
 import { Rings3dComponent } from './components/rings-3d/rings-3d.component';
-import { ItineraryComponent } from './components/itinerary/itinerary.component';
 import { LocationsComponent } from './components/locations/locations.component';
-import { MusicPlayerComponent } from './components/music-player/music-player.component';
 import { FooterComponent } from './components/footer/footer.component';
 
 @Component({
@@ -18,9 +16,7 @@ import { FooterComponent } from './components/footer/footer.component';
     HeroComponent,
     BlessingComponent,
     Rings3dComponent,
-    ItineraryComponent,
     LocationsComponent,
-    MusicPlayerComponent,
     FooterComponent,
   ],
   templateUrl: './app.html',

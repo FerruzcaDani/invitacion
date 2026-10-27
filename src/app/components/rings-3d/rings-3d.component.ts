@@ -27,8 +27,7 @@ import * as THREE from 'three';
 
         <h3 class="rings-title">Nuestras Alianzas</h3>
         <p class="rings-desc">
-          Dos alianzas unidas como nuestras vidas ante Dios.
-          <span class="instruction-highlight">Arrastra de izquierda a derecha para girar 360°</span> o desliza la página para verlas girar sobre su eje.
+          Arrastra para girarlas y descubrir cada detalle.
         </p>
 
         <!-- 3D Canvas Container -->
@@ -111,11 +110,11 @@ import * as THREE from 'three';
     }
 
     .rings-title {
-      font-size: 2.3rem;
+      font-size: clamp(2.5rem, 5vw, 3.6rem);
       color: var(--c-cafe-deep);
-      margin-bottom: 12px;
-      font-weight: 500;
-      letter-spacing: 0.05em;
+      margin-bottom: 14px;
+      font-weight: 400;
+      letter-spacing: -0.03em;
     }
 
     .rings-desc {
@@ -251,7 +250,7 @@ import * as THREE from 'three';
         padding: 30px 18px 24px;
       }
       .rings-title {
-        font-size: 1.8rem;
+        font-size: 2.35rem;
       }
     }
   `]
