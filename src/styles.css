@@ -1,0 +1,338 @@
+/* ============================================================
+   BODA ALAN & DANY - DESIGN SYSTEM & GLOBAL THEME
+   Paleta: Blanco, Hueso, Café Claro/Champán y Verde Pistache
+   ============================================================ */
+
+:root {
+  /* Paleta cromática principal */
+  --c-white: #FFFFFF;
+  --c-hueso: #FAF6F0;
+  --c-hueso-dark: #F3ECE1;
+  --c-cream: #FCFAF7;
+  
+  /* Café Claro / Champán / Dorado suave */
+  --c-cafe-light: #E8DACB;
+  --c-cafe: #C4A47C;
+  --c-cafe-medium: #A4835B;
+  --c-cafe-dark: #7A5B36;
+  --c-cafe-deep: #4A351E;
+
+  /* Verde Pistache / Olivo Suave */
+  --c-pistache-subtle: #F0F5EE;
+  --c-pistache-light: #C9D9C3;
+  --c-pistache: #8DA87E;
+  --c-pistache-dark: #627C54;
+
+  /* Textos */
+  --text-main: #3D352E;
+  --text-muted: #73685E;
+  --text-light: #9B9185;
+  --text-gold: #B68E56;
+
+  /* Tipografías */
+  --font-serif: 'Cormorant Garamond', Georgia, serif;
+  --font-script: 'Alex Brush', cursive;
+  --font-sans: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* Sombras y elevaciones sutiles */
+  --shadow-sm: 0 4px 14px rgba(90, 70, 50, 0.05);
+  --shadow-md: 0 10px 30px rgba(90, 70, 50, 0.08);
+  --shadow-lg: 0 20px 45px rgba(90, 70, 50, 0.12);
+  --shadow-gold: 0 8px 24px rgba(196, 164, 124, 0.28);
+
+  /* Bordes */
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-full: 9999px;
+
+  /* Gradientes */
+  --grad-gold: linear-gradient(135deg, #D6B995 0%, #C4A47C 50%, #A68357 100%);
+  --grad-pearl: linear-gradient(180deg, #FFFFFF 0%, #FAF6F0 100%);
+  --grad-pistache: linear-gradient(135deg, #9EBA8F 0%, #8DA87E 100%);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  color: var(--text-main);
+  background-color: var(--c-hueso);
+  overflow-x: hidden;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--c-hueso);
+  color: var(--text-main);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Background watermark texture */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: radial-gradient(circle at 10% 20%, rgba(201, 217, 195, 0.12) 0%, transparent 40%),
+                    radial-gradient(circle at 90% 80%, rgba(196, 164, 124, 0.1) 0%, transparent 45%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  color: var(--c-cafe-deep);
+}
+
+p {
+  color: var(--text-muted);
+}
+
+/* Typography Helpers */
+.font-script {
+  font-family: var(--font-script);
+}
+
+.font-serif {
+  font-family: var(--font-serif);
+}
+
+.font-sans {
+  font-family: var(--font-sans);
+}
+
+/* Section Containers */
+.section-container {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 24px;
+  position: relative;
+  z-index: 1;
+}
+
+.section-wrapper {
+  padding: 100px 0;
+  position: relative;
+}
+
+@media (max-width: 768px) {
+  .section-wrapper {
+    padding: 60px 0;
+  }
+}
+
+/* Section Header Motif */
+.section-header {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 54px;
+}
+
+.section-subtitle {
+  font-family: var(--font-script);
+  font-size: 2.2rem;
+  color: var(--c-cafe-medium);
+  line-height: 1;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.section-title {
+  font-size: 2.6rem;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--c-cafe-deep);
+  position: relative;
+  display: inline-block;
+  padding-bottom: 16px;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 2px;
+  background: var(--grad-gold);
+  border-radius: 2px;
+}
+
+.section-desc {
+  font-size: 1.05rem;
+  margin-top: 16px;
+  color: var(--text-muted);
+  font-style: italic;
+  font-family: var(--font-serif);
+}
+
+/* Buttons */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: var(--grad-gold);
+  color: #FFFFFF;
+  border: none;
+  padding: 14px 34px;
+  border-radius: var(--radius-full);
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  box-shadow: var(--shadow-gold);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(196, 164, 124, 0.4);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--c-cafe-dark);
+  border: 1px solid var(--c-cafe-light);
+  padding: 13px 32px;
+  border-radius: var(--radius-full);
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(8px);
+}
+
+.btn-secondary:hover {
+  background: #FFFFFF;
+  border-color: var(--c-cafe-medium);
+  color: var(--c-cafe-deep);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Card Styling */
+.wedding-card {
+  background: rgba(255, 255, 255, 0.88);
+  border: 1px solid rgba(232, 218, 203, 0.7);
+  border-radius: var(--radius-lg);
+  padding: 36px 30px;
+  box-shadow: var(--shadow-md);
+  backdrop-filter: blur(12px);
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.wedding-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Ornaments and Arch */
+.arch-frame {
+  border-top-left-radius: 200px;
+  border-top-right-radius: 200px;
+  border-bottom-left-radius: 24px;
+  border-bottom-right-radius: 24px;
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  border: 4px solid #FFFFFF;
+  outline: 1px solid var(--c-cafe-light);
+}
+
+/* Subtle leaf / pistachio badge */
+.badge-pistache {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--c-pistache-subtle);
+  color: var(--c-pistache-dark);
+  border: 1px solid var(--c-pistache-light);
+  padding: 6px 16px;
+  border-radius: var(--radius-full);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+/* Golden divider */
+.gold-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin: 20px 0;
+  color: var(--c-cafe-medium);
+}
+
+.gold-divider::before,
+.gold-divider::after {
+  content: '';
+  height: 1px;
+  width: 60px;
+  background: linear-gradient(90deg, transparent, var(--c-cafe-light), transparent);
+}
+
+/* Keyframe animations */
+@keyframes floatGentle {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes pulseSoft {
+  0%, 100% { opacity: 0.85; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.03); }
+}
+
+@keyframes spinSlow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.animate-float {
+  animation: floatGentle 5s ease-in-out infinite;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--c-hueso);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--c-cafe-light);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--c-cafe-medium);
+}
+
