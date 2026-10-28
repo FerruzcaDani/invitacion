@@ -1,0 +1,7 @@
+{
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist/boda-alan-y-dany/browser",
+  "rewrites": [
+    { "source": "/access-contador", "destination": "/access-contador/index.html" }
+  ]
+}

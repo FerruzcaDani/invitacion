@@ -70,6 +70,15 @@ app-gallery,app-dress-code,app-gifts,app-rsvp {display:none!important}
 .ad-editorial .rings-card{max-width:940px}
 .ad-editorial .canvas-wrapper{background:radial-gradient(ellipse at center,#f9faf5 10%,#e4e8df 75%);border:1px solid #cbd2c3;border-radius:24px}
 
+/* Portrait-free cover: give the typography the full width. */
+.ad-editorial .hero-content{grid-template-columns:1fr;max-width:780px;text-align:center;justify-items:center}
+.ad-editorial .wedding-announcement,.ad-editorial .event-teaser,.ad-editorial .countdown-container,.ad-editorial .hero-actions{grid-column:1;justify-self:center}
+.ad-editorial .hero-pretitle,.ad-editorial .hero-invitation{margin-left:auto;margin-right:auto}
+.ad-editorial .hero-names .ampersand{display:inline;margin:0 .08em}
+.ad-editorial .hero-actions{align-items:center}
+.ad-editorial .scroll-down-indicator{grid-column:1}
+.ad-padrinos-names{max-width:620px;margin:0 auto}
+
 /* Refined navigation, hierarchy and unified event cards. */
 .ad-editorial .section-title,
 .ad-editorial .rings-title{font-size:clamp(40px,5vw,58px);line-height:1.05;letter-spacing:-.035em;font-weight:400}

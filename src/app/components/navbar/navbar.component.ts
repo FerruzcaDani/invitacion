@@ -20,6 +20,7 @@ import { CommonModule } from '@angular/common';
           <a href="#bendicion" class="nav-link">Bendición</a>
           <a href="#alianzas" class="nav-link">Alianzas 3D</a>
           <a href="#itinerario" class="nav-link">Cómo llegar</a>
+          <a href="#confirmacion" class="nav-link">Confirmar</a>
         </div>
 
         <!-- Mobile Hamburger Toggle -->
@@ -42,6 +43,7 @@ import { CommonModule } from '@angular/common';
         <a href="#bendicion" (click)="closeMobileMenu()" class="mobile-link">Bendición</a>
         <a href="#alianzas" (click)="closeMobileMenu()" class="mobile-link">Alianzas 3D</a>
         <a href="#itinerario" (click)="closeMobileMenu()" class="mobile-link">Cómo llegar</a>
+        <a href="#confirmacion" (click)="closeMobileMenu()" class="mobile-link">Confirmar</a>
       </div>
     </nav>
   `,

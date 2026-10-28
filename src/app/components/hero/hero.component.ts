@@ -27,35 +27,6 @@ import { CommonModule } from '@angular/common';
           </p>
         </div>
 
-        <!-- Hero Photo Frame with Arch & Botanical Elegance -->
-        <div class="hero-photo-container">
-          <div class="photo-arch-frame">
-            <img
-              src="images/alan-dany-portrait.jpg"
-              alt="Alan y Dany sonriendo juntos"
-              class="hero-couple-img"
-              loading="eager"
-            />
-            <div class="photo-overlay-gradient"></div>
-            <div class="photo-caption-badge">
-              <span>¡Nuestra Historia Comienza Aquí!</span>
-            </div>
-          </div>
-          <!-- Decorative Floral Leaves SVG -->
-          <div class="leaf-ornament leaf-left">
-            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
-              <path d="M12 2C7 5 4 10 4 16c0 3.5 2.5 6 6 6s6-2.5 6-6c0-6-3-11-8-14z" />
-              <path d="M12 2v20" />
-            </svg>
-          </div>
-          <div class="leaf-ornament leaf-right">
-            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
-              <path d="M12 2C7 5 4 10 4 16c0 3.5 2.5 6 6 6s6-2.5 6-6c0-6-3-11-8-14z" />
-              <path d="M12 2v20" />
-            </svg>
-          </div>
-        </div>
-
         <!-- Date and Location Teaser -->
         <div class="event-teaser">
           <div class="date-badge">
@@ -100,6 +71,7 @@ import { CommonModule } from '@angular/common';
             </svg>
             Ver Itinerario
           </a>
+          <a href="#confirmacion" class="btn-secondary">Confirmar asistencia</a>
         </div>
 
         <!-- Gentle Scroll Down Indicator -->

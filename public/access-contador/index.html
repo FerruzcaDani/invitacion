@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex,nofollow"><title>Confirmaciones · Alan y Dany</title>
+  <style>
+    :root{font-family:Georgia,serif;color:#364231;background:#f1efe6}*{box-sizing:border-box}
+    body{margin:0;min-height:100vh;padding:32px 18px}main{max-width:740px;margin:5vh auto}
+    h1{font-size:clamp(36px,6vw,58px);font-weight:400;margin:0 0 12px}p{color:#697263}
+    .panel{background:#fbfaf5;border:1px solid #d2d9c9;border-radius:24px;padding:clamp(22px,5vw,42px);box-shadow:0 20px 45px #343e2a17}
+    form{display:flex;gap:10px;flex-wrap:wrap;margin:25px 0}input{flex:1;min-width:210px;padding:14px 17px;border:1px solid #bfc9b6;border-radius:999px;font:15px system-ui}button{border:0;border-radius:999px;background:#586b4e;color:white;padding:14px 22px;cursor:pointer;font:600 13px system-ui}
+    .totals{display:flex;gap:16px;flex-wrap:wrap;margin:28px 0}.total{flex:1;min-width:160px;padding:20px;border-radius:18px;background:#e9ede3;text-align:center}.total strong{display:block;font-size:40px;font-weight:400}.total span{font:12px system-ui;color:#62715b}
+    ul{list-style:none;padding:0;margin:0}li{display:flex;justify-content:space-between;gap:14px;border-top:1px solid #dce1d6;padding:17px 4px;font:15px system-ui}li small{color:#687466}#error{color:#a34338}
+  </style>
+</head>
+<body><main><section class="panel"><h1>Confirmaciones</h1><p>Resumen privado de la boda de Alan y Dany.</p>
+  <form id="access"><input id="password" type="password" placeholder="Contraseña de administrador" autocomplete="current-password" required><button type="submit">Ver contador</button></form>
+  <p id="error" role="status"></p><div id="results" hidden><div class="totals"><div class="total"><strong id="guests">0</strong><span>Personas confirmadas</span></div><div class="total"><strong id="families">0</strong><span>Familias</span></div></div><ul id="list"></ul></div>
+</section></main><script>
+  document.getElementById('access').addEventListener('submit',async event=>{
+    event.preventDefault();const password=document.getElementById('password').value;
+    const error=document.getElementById('error'),results=document.getElementById('results');error.textContent='';results.hidden=true;
+    try{const response=await fetch('/api/contador',{headers:{Authorization:`Bearer ${password}`},cache:'no-store'});
+      if(!response.ok)throw new Error(response.status===401?'Contraseña incorrecta.':'No se pudo cargar el contador.');
+      const data=await response.json();document.getElementById('guests').textContent=data.guests;document.getElementById('families').textContent=data.families;
+      const list=document.getElementById('list');list.replaceChildren();for(const item of data.records){const li=document.createElement('li'),name=document.createElement('span'),count=document.createElement('small');name.textContent=item.name;count.textContent=`${item.count} ${item.count===1?'persona':'personas'}`;li.append(name,count);list.append(li)}
+      results.hidden=false;
+    }catch(e){error.textContent=e.message}
+  });
+</script></body></html>

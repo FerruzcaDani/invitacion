@@ -26,14 +26,14 @@
     let resumeRings = false;
     document.body.classList.add('ad-editorial');
     $('.blessing-photo-card')?.remove();
-    const removedLinks = 'a[href="#rsvp"],a[href="#galeria"],a[href="#dress-code"],a[href="#regalos"]';
+    const removedLinks = 'a[href="#galeria"],a[href="#dress-code"],a[href="#regalos"]';
     const pruneLinks = () => $$(removedLinks).forEach(e=>e.remove());
     pruneLinks();
     $$('app-gallery,app-dress-code,app-gifts,app-rsvp').forEach(e=>e.remove());
     const nav = document.querySelector('app-navbar');
     if(nav)new MutationObserver(pruneLinks).observe(nav,{childList:true,subtree:true});
     const parents=$('.parents-block');
-    if(parents)parents.outerHTML="<div class=\"parents-block ad-padrinos\">\n              <span class=\"ad-eyebrow\">Nos acompañan en esta promesa</span>\n              <h4 class=\"subheading-parents\">Padrinos de velación</h4>\n              <p class=\"ad-padrinos-names\">Saul Montaño <span>&amp;</span> Norma Olvera</p>\n            </div>";
+    if(parents)parents.outerHTML="<div class=\"parents-block ad-padrinos\">\n              <span class=\"ad-eyebrow\">Nos acompañan en esta promesa</span>\n              <h4 class=\"subheading-parents\">Padrinos de velación</h4>\n              <p class=\"ad-padrinos-names\">Saúl Montaño Camacho <span>&amp;</span> Norma Guadalupe Olvera Bocanegra</p>\n            </div>";
     const footerDate=$('.footer-date-badge span');
     if(footerDate)footerDate.textContent='19 • DICIEMBRE • 2026';
     $$('.btn-waze').forEach(e=>e.remove());
@@ -46,7 +46,6 @@
     hero.insertAdjacentHTML('afterbegin', flower('ad-flower ad-flower-left') + flower('ad-flower ad-flower-right'));
     $('.hero-pretitle').textContent = 'Con la bendición de Dios y de nuestras familias';
     $('.hero-invitation').textContent = 'Hay días que queremos guardar para siempre. Este, queremos vivirlo contigo.';
-    $('.photo-caption-badge span').textContent = 'El comienzo de todo lo que viene';
     const small = create('span','ad-eyebrow','NOS CASAMOS · 19 DICIEMBRE 2026');
     $('.wedding-announcement').prepend(small);
     const calendar = create('button','ad-calendar','Guardar la fecha <span aria-hidden="true">↗</span>');

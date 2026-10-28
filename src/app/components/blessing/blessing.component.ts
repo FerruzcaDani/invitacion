@@ -39,7 +39,7 @@ import { CommonModule } from '@angular/common';
             <div class="parents-block ad-padrinos">
               <span class="ad-eyebrow">Nos acompañan en esta promesa</span>
               <h4 class="subheading-parents">Padrinos de velación</h4>
-              <p class="ad-padrinos-names">Saul Montaño <span>&amp;</span> Norma Olvera</p>
+              <p class="ad-padrinos-names">Saúl Montaño Camacho <span>&amp;</span> Norma Guadalupe Olvera Bocanegra</p>
             </div>
 
             <!-- El Lazo Matrimonial Callout -->
