@@ -26,14 +26,14 @@ export async function GET(request) {
         const result = await get(blob.pathname, { access: 'private' });
         if (result?.stream) {
           const item = await new Response(result.stream).json();
-          if (typeof item.name === 'string' && Number.isInteger(item.count)) records.push(item);
+          if (typeof item.confirmedAt === 'string') records.push(item);
         }
       }
       hasMore = page.hasMore;
       cursor = page.cursor;
     }
     records.sort((a, b) => b.confirmedAt.localeCompare(a.confirmedAt));
-    return Response.json({ families: records.length, guests: records.reduce((sum, item) => sum + item.count, 0), records }, { headers });
+    return Response.json({ confirmations: records.length }, { headers });
   } catch (error) {
     console.error('Counter loading failed', error);
     return Response.json({ error: 'No se pudo cargar el contador' }, { status: 503, headers });

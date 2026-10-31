@@ -18,7 +18,7 @@ import { CommonModule } from '@angular/common';
         <div class="nav-links desktop-only">
           <a href="#inicio" class="nav-link">Inicio</a>
           <a href="#bendicion" class="nav-link">Bendición</a>
-          <a href="#alianzas" class="nav-link">Alianzas 3D</a>
+          <a href="#alianzas" class="nav-link">Alianzas</a>
           <a href="#itinerario" class="nav-link">Cómo llegar</a>
           <a href="#confirmacion" class="nav-link">Confirmar</a>
         </div>
@@ -41,7 +41,7 @@ import { CommonModule } from '@angular/common';
       <div class="mobile-menu" *ngIf="menuOpen()">
         <a href="#inicio" (click)="closeMobileMenu()" class="mobile-link">Inicio</a>
         <a href="#bendicion" (click)="closeMobileMenu()" class="mobile-link">Bendición</a>
-        <a href="#alianzas" (click)="closeMobileMenu()" class="mobile-link">Alianzas 3D</a>
+        <a href="#alianzas" (click)="closeMobileMenu()" class="mobile-link">Alianzas</a>
         <a href="#itinerario" (click)="closeMobileMenu()" class="mobile-link">Cómo llegar</a>
         <a href="#confirmacion" (click)="closeMobileMenu()" class="mobile-link">Confirmar</a>
       </div>

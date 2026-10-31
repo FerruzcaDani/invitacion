@@ -272,9 +272,9 @@ export class ItineraryComponent {
   {
     "time": "1:00 PM",
     "title": "Misa",
-    "description": "Acompáñanos a celebrar nuestra unión en el Templo Santa María de Guadalupe, en La Magdalena.",
+    "description": "Acompáñanos a celebrar nuestra unión en el Templo Santa María Magdalena, en La Magdalena.",
     "icon": "⛪",
-    "badge": "Templo Santa María de Guadalupe"
+    "badge": "Templo Santa María Magdalena"
   },
   {
     "time": "2:30 PM",

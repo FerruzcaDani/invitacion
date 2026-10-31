@@ -51,7 +51,7 @@
     const calendar = create('button','ad-calendar','Guardar la fecha <span aria-hidden="true">↗</span>');
     calendar.type='button'; $('.event-teaser').append(calendar);
     calendar.onclick = () => {
-      const content = 'BEGIN:VCALENDAR\r\nVERSION:2.0\r\nPRODID:-//Alan y Dany//Invitacion//ES\r\nBEGIN:VEVENT\r\nUID:alan-dany-20261219@invitacion.local\r\nDTSTAMP:20261027T000000Z\r\nDTSTART;VALUE=DATE:20261219\r\nDTEND;VALUE=DATE:20261220\r\nSUMMARY:Boda de Alan y Dany\r\nDESCRIPTION:Misa a la 1:00 PM en Templo Santa María de Guadalupe - La Magdalena. Recepción a las 2:30 PM en Jardín de eventos Mauri - Tequisquiapan\\, Querétaro.\r\nEND:VEVENT\r\nEND:VCALENDAR';
+      const content = 'BEGIN:VCALENDAR\r\nVERSION:2.0\r\nPRODID:-//Alan y Dany//Invitacion//ES\r\nBEGIN:VEVENT\r\nUID:alan-dany-20261219@invitacion.local\r\nDTSTAMP:20261027T000000Z\r\nDTSTART;VALUE=DATE:20261219\r\nDTEND;VALUE=DATE:20261220\r\nSUMMARY:Boda de Alan y Dany\r\nDESCRIPTION:Misa a la 1:00 PM en Templo Santa María Magdalena - La Magdalena. Recepción a las 2:30 PM en Jardín de eventos Mauri - Tequisquiapan\\, Querétaro.\r\nEND:VEVENT\r\nEND:VCALENDAR';
       download(content,'boda-alan-y-dany.ics','text/calendar');
       announce('Fecha descargada. Abre el archivo para añadirla a tu calendario.');
     };
@@ -111,7 +111,7 @@
     $$('.section-header,.blessing-grid,.timeline-item,.location-card,.gallery-card,.rsvp-card,.ad-union-copy').forEach((e,i)=>{e.classList.add('ad-reveal');e.style.setProperty('--ad-delay',`${i%3*75}ms`);reveal.observe(e);});
     const textUpdates=[['#itinerario .section-subtitle','El día, paso a paso'],['#itinerario .section-title','Cómo llegar'],['#itinerario .section-desc','Horarios, lugares y rutas para acompañarnos en cada momento.']];
     textUpdates.forEach(([s,t])=>{if($(s))$(s).textContent=t;});
-    $$('.nav-link,.mobile-link').forEach(e=>{if(e.textContent.trim()==='Alianzas 3D')e.textContent='Las alianzas';});
+    $$('.nav-link,.mobile-link').forEach(e=>{if(e.textContent.trim()==='Alianzas')e.textContent='Las alianzas';});
     $$('.timeline-card').forEach((card,i)=>{
       const title=$('.event-title',card),time=$('.time-text',card),desc=$('.event-desc',card),tag=$('.event-tag',card);
       if(!title||!desc)return;const button=create('button','ad-timeline-toggle',`<span class="ad-timeline-number">0${i+1}</span><span><small>${time?.textContent||''}</small><strong>${title.textContent}</strong></span><span class="ad-plus" aria-hidden="true">+</span>`);button.type='button';button.setAttribute('aria-expanded',String(i===0));button.setAttribute('aria-controls',`ad-moment-${i}`);

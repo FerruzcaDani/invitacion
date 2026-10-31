@@ -247,7 +247,7 @@ export class LocationsComponent {
     {
       time: '1:00 PM',
       title: 'Misa',
-      placeName: 'Templo Santa María de Guadalupe',
+      placeName: 'Templo Santa María Magdalena',
       address: 'La Magdalena',
       icon: '⛪',
       badge: 'Ceremonia religiosa',
